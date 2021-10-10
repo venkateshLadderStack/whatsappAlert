@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
     .create({
       body: req.body,
       from: "whatsapp:+14155238886",
-      to: `whatsapp:+917731012637`,
+      to: `whatsapp:+917287073461`,
     })
     .then((message) => res.send(message.sid))
     .done();
