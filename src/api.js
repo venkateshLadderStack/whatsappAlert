@@ -24,10 +24,8 @@ router.post("/", async (req, res) => {
       from: "whatsapp:+14155238886",
       to: `whatsapp:+917731012637`,
     })
-    .then((message) => console.log(message.sid))
+    .then((message) => res.send(message.sid))
     .done();
-
-  res.send(req.body);
 });
 
 app.use(`/.netlify/functions/api`, router);
