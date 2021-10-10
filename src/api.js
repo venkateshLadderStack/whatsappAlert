@@ -1,6 +1,7 @@
 const express = require("express");
 const serverless = require("serverless-http");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 dotenv.config();
 
@@ -9,6 +10,7 @@ const authToken = process.env.API_KEY;
 const client = require("twilio")(accountSid, authToken);
 
 const app = express();
+app.use(cors());
 const router = express.Router();
 
 router.get("/", (req, res) => {
